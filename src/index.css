@@ -92,7 +92,6 @@
 /* ── Ambient Background ────────────────────────────────────────── */
 .ambient-bg {
   position: relative;
-  overflow: hidden;
 }
 .ambient-bg::before,
 .ambient-bg::after {
