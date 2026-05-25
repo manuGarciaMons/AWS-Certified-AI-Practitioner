@@ -16,8 +16,8 @@ function ScoreRing({ score, size = 140 }) {
   const r = (size - stroke) / 2
   const circ = 2 * Math.PI * r
   const offset = circ * (1 - score / 100)
-  const color = score >= 75 ? '#10b981' : score >= 50 ? '#f59e0b' : '#f43f5e'
-  const glow = score >= 75 ? 'rgba(16,185,129,0.3)' : score >= 50 ? 'rgba(245,158,11,0.3)' : 'rgba(244,63,94,0.3)'
+  const color = score >= 75 ? '#10b981' : score >= 50 ? '#8b5cf6' : '#f43f5e'
+  const glow = score >= 75 ? 'rgba(16,185,129,0.3)' : score >= 50 ? 'rgba(139,92,246,0.3)' : 'rgba(244,63,94,0.3)'
   const label = score >= 75 ? '¡Aprobado!' : score >= 50 ? 'Buen intento' : 'Hay que repasar'
   return (
     <div className="flex flex-col items-center">
@@ -46,16 +46,16 @@ function QuizTimer({ timeLeft, totalTime }) {
 
   return (
     <div className="flex items-center gap-3 mb-5">
-      <Clock size={15} className={`flex-shrink-0 ${isCrit ? 'text-red-400' : isWarn ? 'text-amber-400' : 'text-slate-600'}`} />
+      <Clock size={15} className={`flex-shrink-0 ${isCrit ? 'text-red-400' : isWarn ? 'text-violet-400' : 'text-slate-600'}`} />
       <div className="flex-1 h-1.5 bg-white/[0.04] rounded-full overflow-hidden">
         <div
-          className={`h-full rounded-full transition-all duration-1000 ${isCrit ? 'bg-red-500 animate-pulse' : isWarn ? 'bg-amber-500' : 'bg-emerald-500'}`}
-          style={{ width: `${pct}%`, boxShadow: `0 0 8px ${isCrit ? 'rgba(239,68,68,0.3)' : isWarn ? 'rgba(245,158,11,0.3)' : 'rgba(16,185,129,0.3)'}` }}
+          className={`h-full rounded-full transition-all duration-1000 ${isCrit ? 'bg-red-500 animate-pulse' : isWarn ? 'bg-violet-500' : 'bg-emerald-500'}`}
+          style={{ width: `${pct}%`, boxShadow: `0 0 8px ${isCrit ? 'rgba(239,68,68,0.3)' : isWarn ? 'rgba(139,92,246,0.3)' : 'rgba(16,185,129,0.3)'}` }}
           role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100}
           aria-label={`Tiempo restante: ${mins}:${secs}`}
         />
       </div>
-      <span className={`font-mono text-sm font-bold min-w-[3.5rem] text-right ${isCrit ? 'text-red-400 animate-pulse' : isWarn ? 'text-amber-400' : 'text-slate-500'}`}>
+      <span className={`font-mono text-sm font-bold min-w-[3.5rem] text-right ${isCrit ? 'text-red-400 animate-pulse' : isWarn ? 'text-violet-400' : 'text-slate-500'}`}>
         {mins}:{secs}
       </span>
     </div>
@@ -82,7 +82,7 @@ function QuizSetup({ domains, onStart }) {
         <h2 className="text-white font-bold mb-4 text-sm">Dominio</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           <button onClick={() => setDomain('all')} aria-pressed={domain === 'all'}
-            className={`p-4 rounded-xl border transition-all duration-200 text-left ${domain === 'all' ? 'border-amber-500/40 bg-amber-500/[0.08] shadow-[0_0_20px_rgba(245,158,11,0.1)]' : 'border-white/[0.06] hover:border-white/[0.12] bg-white/[0.02] hover:bg-white/[0.04]'}`}>
+            className={`p-4 rounded-xl border transition-all duration-200 text-left ${domain === 'all' ? 'border-violet-500/40 bg-violet-500/[0.08] shadow-[0_0_20px_rgba(139,92,246,0.1)]' : 'border-white/[0.06] hover:border-white/[0.12] bg-white/[0.02] hover:bg-white/[0.04]'}`}>
             <span className="text-2xl" aria-hidden="true">🎯</span>
             <p className="text-white font-bold text-sm mt-1.5">Simulación completa</p>
             <p className="text-slate-600 text-xs">Todos los dominios, aleatorio</p>
@@ -91,7 +91,7 @@ function QuizSetup({ domains, onStart }) {
             const active = domain === d.id
             return (
               <button key={d.id} onClick={() => setDomain(d.id)} aria-pressed={active}
-                className={`p-4 rounded-xl border transition-all duration-200 text-left ${active ? 'border-amber-500/40 bg-amber-500/[0.08] shadow-[0_0_20px_rgba(245,158,11,0.1)]' : 'border-white/[0.06] hover:border-white/[0.12] bg-white/[0.02] hover:bg-white/[0.04]'}`}>
+                className={`p-4 rounded-xl border transition-all duration-200 text-left ${active ? 'border-violet-500/40 bg-violet-500/[0.08] shadow-[0_0_20px_rgba(139,92,246,0.1)]' : 'border-white/[0.06] hover:border-white/[0.12] bg-white/[0.02] hover:bg-white/[0.04]'}`}>
                 <span className="text-2xl" aria-hidden="true">{d.icon}</span>
                 <p className="text-white font-bold text-sm mt-1.5">{d.shortName}</p>
                 <p className="text-slate-600 text-xs">{d.weight}% del examen</p>
@@ -108,7 +108,7 @@ function QuizSetup({ domains, onStart }) {
           <div className="flex gap-2 flex-wrap">
             {[5, 10, 20, 'Todas'].map(n => (
               <button key={n} onClick={() => setCount(n)} aria-pressed={count === n}
-                className={`px-4 py-2 rounded-xl font-bold text-sm transition-all duration-200 ${count === n ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 shadow-[0_0_12px_rgba(245,158,11,0.25)]' : 'bg-white/[0.04] text-slate-400 hover:bg-white/[0.08] border border-white/[0.06]'}`}>
+                className={`px-4 py-2 rounded-xl font-bold text-sm transition-all duration-200 ${count === n ? 'bg-gradient-to-r from-violet-600 to-blue-600 text-white shadow-[0_0_12px_rgba(139,92,246,0.25)]' : 'bg-white/[0.04] text-slate-400 hover:bg-white/[0.08] border border-white/[0.06]'}`}>
                 {n}
               </button>
             ))}
@@ -116,16 +116,16 @@ function QuizSetup({ domains, onStart }) {
         </div>
         <div className="card p-5">
           <h2 className="text-white font-bold mb-3 text-sm flex items-center gap-2">
-            <Timer size={15} className="text-amber-400" /> Temporizador
+            <Timer size={15} className="text-violet-400" /> Temporizador
           </h2>
           <label className="flex items-center gap-3 cursor-pointer group">
             <div className="relative">
               <input type="checkbox" className="sr-only peer" checked={timerOn} onChange={e => setTimerOn(e.target.checked)} />
-              <div className="w-10 h-6 bg-white/[0.06] rounded-full peer-checked:bg-amber-500 transition-all peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.3)]" />
+              <div className="w-10 h-6 bg-white/[0.06] rounded-full peer-checked:bg-violet-500 transition-all peer-checked:shadow-[0_0_12px_rgba(139,92,246,0.3)]" />
               <div className="absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow transition-all peer-checked:translate-x-4" />
             </div>
             <div>
-              <p className={`text-sm font-semibold ${timerOn ? 'text-amber-400' : 'text-slate-500'}`}>
+              <p className={`text-sm font-semibold ${timerOn ? 'text-violet-400' : 'text-slate-500'}`}>
                 {timerOn ? 'Activado' : 'Desactivado'}
               </p>
               <p className="text-slate-600 text-xs">90 seg/pregunta</p>
@@ -155,7 +155,7 @@ function QuizQuestion({ question, domains, index, total, onAnswer, answered, sel
       </div>
 
       <div className="h-1 bg-white/[0.04] rounded-full mb-5 overflow-hidden">
-        <div className="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full transition-all shadow-[0_0_8px_rgba(245,158,11,0.3)]"
+        <div className="h-full bg-gradient-to-r from-violet-600 to-blue-600 rounded-full transition-all shadow-[0_0_8px_rgba(139,92,246,0.3)]"
           style={{ width: `${((index + 1) / total) * 100}%` }} />
       </div>
 
@@ -184,8 +184,8 @@ function QuizQuestion({ question, domains, index, total, onAnswer, answered, sel
                 cls = 'border-white/[0.03] bg-transparent opacity-40'
               }
             } else if (selected === i) {
-              cls = 'border-amber-500/40 bg-amber-500/[0.06] shadow-[0_0_16px_rgba(245,158,11,0.08)]'
-              letter = 'bg-amber-500 text-slate-950 border-amber-500'
+              cls = 'border-violet-500/40 bg-violet-500/[0.06] shadow-[0_0_16px_rgba(139,92,246,0.08)]'
+              letter = 'bg-violet-500 text-white border-violet-500'
             }
 
             return (
@@ -204,7 +204,7 @@ function QuizQuestion({ question, domains, index, total, onAnswer, answered, sel
       </fieldset>
 
       {answered && (
-        <div className={`mt-5 p-4 rounded-2xl border ${selected === question.correct ? 'bg-emerald-500/[0.06] border-emerald-500/20' : 'bg-amber-500/[0.06] border-amber-500/20'}`}
+        <div className={`mt-5 p-4 rounded-2xl border ${selected === question.correct ? 'bg-emerald-500/[0.06] border-emerald-500/20' : 'bg-violet-500/[0.06] border-violet-500/20'}`}
           role="alert" aria-live="polite">
           <p className="font-bold text-sm text-white mb-1.5">
             {selected === question.correct ? '✅ ¡Correcto!' : '❌ Incorrecto'}

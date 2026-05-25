@@ -3,7 +3,7 @@ import { Search, ChevronDown, ChevronUp, Zap, X } from 'lucide-react'
 import { GLOSSARY_ITEMS, GLOSSARY_CATEGORIES } from '../data/mockData'
 
 const CATEGORY_COLORS = {
-  'IA Generativa': 'bg-amber-500/15 text-amber-400 border-amber-500/20',
+  'IA Generativa': 'bg-violet-500/15 text-violet-400 border-violet-500/20',
   'Machine Learning': 'bg-blue-500/15 text-blue-400 border-blue-500/20',
   'Visión Artificial': 'bg-emerald-500/15 text-emerald-400 border-emerald-500/20',
   'Procesamiento del Lenguaje': 'bg-purple-500/15 text-purple-400 border-purple-500/20',
@@ -18,7 +18,7 @@ function Highlight({ text, query }) {
     <>
       {parts.map((part, i) =>
         part.toLowerCase() === query.toLowerCase()
-          ? <mark key={i} className="bg-amber-500/25 text-amber-200 rounded-sm px-0.5 not-italic">{part}</mark>
+          ? <mark key={i} className="bg-violet-500/25 text-violet-200 rounded-sm px-0.5 not-italic">{part}</mark>
           : part
       )}
     </>
@@ -63,7 +63,7 @@ function ServiceCard({ item, query }) {
               <ul className="space-y-1.5">
                 {item.keyPoints.map((pt, i) => (
                   <li key={i} className="flex items-start gap-2 text-xs text-slate-300">
-                    <span className="mt-1.5 w-1 h-1 rounded-full bg-amber-500 flex-shrink-0" aria-hidden="true" />
+                    <span className="mt-1.5 w-1 h-1 rounded-full bg-violet-500 flex-shrink-0" aria-hidden="true" />
                     {pt}
                   </li>
                 ))}
@@ -72,9 +72,9 @@ function ServiceCard({ item, query }) {
           )}
 
           {item.examTip && (
-            <div className="flex items-start gap-2 p-3 bg-amber-500/[0.06] border border-amber-500/15 rounded-xl">
-              <Zap size={13} className="text-amber-400 flex-shrink-0 mt-0.5" />
-              <p className="text-amber-300/80 text-xs leading-relaxed">{item.examTip}</p>
+            <div className="flex items-start gap-2 p-3 bg-violet-500/[0.06] border border-violet-500/15 rounded-xl">
+              <Zap size={13} className="text-violet-400 flex-shrink-0 mt-0.5" />
+              <p className="text-violet-300/80 text-xs leading-relaxed">{item.examTip}</p>
             </div>
           )}
         </div>
@@ -113,7 +113,7 @@ export default function Glossary() {
       {/* Header */}
       <div className="mb-8 animate-fade-up">
         <h1 className="text-3xl lg:text-4xl font-black tracking-tight">
-          <span className="gradient-text-cool">Glosario</span>
+          <span className="gradient-text">Glosario</span>
           <span className="text-white"> de Servicios AWS</span>
         </h1>
         <p className="text-slate-500 mt-1.5 text-sm font-medium">{GLOSSARY_ITEMS.length} servicios de IA/ML · haz clic en una tarjeta para expandirla</p>
@@ -127,7 +127,7 @@ export default function Glossary() {
           value={search}
           onChange={e => setSearch(e.target.value)}
           placeholder="Buscar servicio, característica o caso de uso..."
-          className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl pl-10 pr-10 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/40 focus:bg-white/[0.05] focus:shadow-[0_0_0_3px_rgba(245,158,11,0.08)] transition-all"
+          className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl pl-10 pr-10 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-violet-500/40 focus:bg-white/[0.05] focus:shadow-[0_0_0_3px_rgba(139,92,246,0.08)] transition-all"
           aria-label="Buscar en el glosario"
         />
         {search && (
@@ -149,7 +149,7 @@ export default function Glossary() {
             onClick={() => setActiveCategory(cat)}
             className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
               activeCategory === cat
-                ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 shadow-[0_0_12px_rgba(245,158,11,0.25)]'
+                ? 'bg-gradient-to-r from-violet-600 to-blue-600 text-white shadow-[0_0_12px_rgba(139,92,246,0.25)]'
                 : 'bg-white/[0.03] text-slate-400 hover:text-white hover:bg-white/[0.06] border border-white/[0.06]'
             }`}
             aria-pressed={activeCategory === cat}

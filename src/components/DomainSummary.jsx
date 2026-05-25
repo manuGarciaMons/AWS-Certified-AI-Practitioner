@@ -11,13 +11,13 @@ function ServiceBadge({ name, desc }) {
       aria-expanded={open}
     >
       <div className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] transition-all border border-white/[0.04] hover:border-white/[0.08]">
-        <span className="font-mono text-sm font-semibold text-amber-300">{name}</span>
+        <span className="font-mono text-sm font-semibold text-violet-300">{name}</span>
         <div className="text-slate-600 group-hover:text-slate-400 transition-colors">
           {open ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
         </div>
       </div>
       {open && (
-        <p className="px-3 py-2.5 text-xs text-slate-500 leading-relaxed border-l-2 border-amber-500/30 ml-3 mt-1.5 animate-fade-up">
+        <p className="px-3 py-2.5 text-xs text-slate-500 leading-relaxed border-l-2 border-violet-500/30 ml-3 mt-1.5 animate-fade-up">
           {desc}
         </p>
       )}

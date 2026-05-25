@@ -92,7 +92,7 @@ export default function Flashcards({ flashcards, domains, selectedDomain, progre
       {/* Domain filter */}
       <div className="flex gap-1.5 flex-wrap mb-3 animate-fade-up" style={{ animationDelay: '80ms' }} role="tablist" aria-label="Filtrar por dominio">
         <button role="tab" aria-selected={activeDomain === 'all'} onClick={() => setActiveDomain('all')}
-          className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${activeDomain === 'all' ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 shadow-[0_0_12px_rgba(245,158,11,0.25)]' : 'bg-white/[0.03] text-slate-400 hover:text-white border border-white/[0.06]'}`}>
+          className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${activeDomain === 'all' ? 'bg-gradient-to-r from-violet-600 to-blue-600 text-white shadow-[0_0_12px_rgba(139,92,246,0.25)]' : 'bg-white/[0.03] text-slate-400 hover:text-white border border-white/[0.06]'}`}>
           Todos
         </button>
         {domains.map(d => {
@@ -142,7 +142,7 @@ export default function Flashcards({ flashcards, domains, selectedDomain, progre
               <span>{pct}%</span>
             </div>
             <div className="h-1 bg-white/[0.04] rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(245,158,11,0.3)]" style={{ width: `${pct}%` }} />
+              <div className="h-full bg-gradient-to-r from-violet-600 to-blue-600 rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(139,92,246,0.3)]" style={{ width: `${pct}%` }} />
             </div>
           </div>
 
@@ -199,7 +199,7 @@ export default function Flashcards({ flashcards, domains, selectedDomain, progre
             {flipped && card && (
               <div className="flex-1 flex gap-2 justify-center">
                 <button onClick={() => handleMark('review')}
-                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 font-semibold text-sm transition-all border border-amber-500/15 hover:border-amber-500/30 hover:shadow-[0_0_12px_rgba(245,158,11,0.15)]"
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-violet-500/10 hover:bg-violet-500/20 text-violet-400 font-semibold text-sm transition-all border border-violet-500/15 hover:border-violet-500/30 hover:shadow-[0_0_12px_rgba(139,92,246,0.15)]"
                   aria-label="Marcar como necesita repaso (tecla 1)">
                   <RefreshCw size={14} /> Repasar
                 </button>

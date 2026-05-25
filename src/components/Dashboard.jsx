@@ -7,8 +7,8 @@ function ProgressRing({ score, size = 120, stroke = 10 }) {
   const r = (size - stroke) / 2
   const circ = 2 * Math.PI * r
   const offset = circ * (1 - score / 100)
-  const color = score >= 75 ? '#10b981' : score >= 50 ? '#f59e0b' : '#6366f1'
-  const glowColor = score >= 75 ? 'rgba(16,185,129,0.3)' : score >= 50 ? 'rgba(245,158,11,0.3)' : 'rgba(99,102,241,0.3)'
+  const color = score >= 75 ? '#10b981' : score >= 50 ? '#8b5cf6' : '#6366f1'
+  const glowColor = score >= 75 ? 'rgba(16,185,129,0.3)' : score >= 50 ? 'rgba(139,92,246,0.3)' : 'rgba(99,102,241,0.3)'
 
   return (
     <div className="relative flex items-center justify-center" style={{ width: size, height: size }}>
@@ -43,13 +43,12 @@ export default function Dashboard({ stats, domains, onNavigate, weakestDomain })
   const quickStats = [
     { label: 'Preguntas', value: stats.totalAnswered, sub: `de 50`, Icon: Target, gradient: 'from-blue-500/20 to-cyan-500/10', iconColor: 'text-blue-400', valueColor: 'text-blue-400', border: 'border-blue-500/10' },
     { label: 'Cards', value: stats.learnedCards, sub: `de ${stats.totalFlashcards}`, Icon: Layers, gradient: 'from-violet-500/20 to-purple-500/10', iconColor: 'text-violet-400', valueColor: 'text-violet-400', border: 'border-violet-500/10' },
-    { label: 'Racha', value: stats.streak, sub: 'días', Icon: Flame, gradient: 'from-amber-500/20 to-orange-500/10', iconColor: 'text-amber-400', valueColor: 'text-amber-400', border: 'border-amber-500/10' },
+    { label: 'Racha', value: stats.streak, sub: 'días', Icon: Flame, gradient: 'from-orange-500/20 to-rose-500/10', iconColor: 'text-orange-400', valueColor: 'text-orange-400', border: 'border-orange-500/10' },
     { label: 'Sesiones', value: stats.quizHistory.length, sub: 'quizzes', Icon: TrendingUp, gradient: 'from-emerald-500/20 to-teal-500/10', iconColor: 'text-emerald-400', valueColor: 'text-emerald-400', border: 'border-emerald-500/10' },
   ]
 
   return (
     <div className="p-5 lg:p-8 max-w-6xl mx-auto">
-      {/* Header */}
       <div className="mb-8 animate-fade-up">
         <h1 className="text-3xl lg:text-4xl font-black tracking-tight">
           <span className="gradient-text">Dashboard</span>
@@ -58,9 +57,7 @@ export default function Dashboard({ stats, domains, onNavigate, weakestDomain })
         <p className="text-slate-500 mt-1.5 text-sm font-medium">AWS Certified AI Practitioner — AIF-C01</p>
       </div>
 
-      {/* Hero: progress + quick stats */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 mb-5 stagger-children">
-        {/* Overall progress */}
         <div className="lg:col-span-2 card-glow p-6 flex items-center gap-6">
           <ProgressRing score={stats.overallScore} />
           <div className="flex-1 min-w-0">
@@ -72,7 +69,7 @@ export default function Dashboard({ stats, domains, onNavigate, weakestDomain })
             {weakDomain && (
               <button
                 onClick={() => onNavigate('quiz', weakestDomain)}
-                className="mt-4 flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors group"
+                className="mt-4 flex items-center gap-1.5 text-xs font-bold text-violet-400 hover:text-violet-300 transition-colors group"
               >
                 <Zap size={12} className="group-hover:animate-pulse" />
                 <span>Reforzar: {weakDomain.shortName}</span>
@@ -82,11 +79,10 @@ export default function Dashboard({ stats, domains, onNavigate, weakestDomain })
           </div>
         </div>
 
-        {/* Quick stats grid */}
         <div className="lg:col-span-3 grid grid-cols-2 gap-3">
           {quickStats.map(({ label, value, sub, Icon, gradient, iconColor, valueColor, border }) => (
             <div key={label} className={`rounded-2xl bg-gradient-to-br ${gradient} border ${border} backdrop-blur-sm p-4 flex items-center gap-3.5 transition-all duration-300 hover:scale-[1.02]`}>
-              <div className={`w-10 h-10 rounded-xl bg-white/[0.06] flex items-center justify-center flex-shrink-0`}>
+              <div className="w-10 h-10 rounded-xl bg-white/[0.06] flex items-center justify-center flex-shrink-0">
                 <Icon size={18} className={iconColor} />
               </div>
               <div className="min-w-0">
@@ -99,14 +95,14 @@ export default function Dashboard({ stats, domains, onNavigate, weakestDomain })
         </div>
       </div>
 
-      {/* Tip del día */}
+      {/* Consejo del día */}
       <div className="mb-5 animate-fade-up" style={{ animationDelay: '200ms' }}>
-        <div className="relative overflow-hidden rounded-2xl border border-amber-500/15">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/[0.08] via-orange-500/[0.04] to-transparent" />
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-radial from-amber-500/[0.06] to-transparent pointer-events-none" />
+        <div className="relative overflow-hidden rounded-2xl border border-violet-500/15">
+          <div className="absolute inset-0 bg-gradient-to-br from-violet-500/[0.08] via-blue-500/[0.04] to-transparent" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-radial from-violet-500/[0.06] to-transparent pointer-events-none" />
           <div className="relative p-5 flex items-start gap-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-amber-500/20 to-orange-500/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 border border-amber-500/20">
-              <Lightbulb size={18} className="text-amber-400" />
+            <div className="w-10 h-10 bg-gradient-to-br from-violet-500/20 to-blue-500/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 border border-violet-500/20">
+              <Lightbulb size={18} className="text-violet-400" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-2">
@@ -117,8 +113,8 @@ export default function Dashboard({ stats, domains, onNavigate, weakestDomain })
               <h3 className="text-white font-bold text-sm mb-2 leading-snug">{todaysTip.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed">{todaysTip.content}</p>
               {todaysTip.examHint && (
-                <div className="mt-3 px-3 py-2 bg-amber-500/[0.06] border border-amber-500/15 rounded-xl">
-                  <p className="text-amber-300/80 text-xs leading-relaxed flex items-start gap-1.5">
+                <div className="mt-3 px-3 py-2 bg-violet-500/[0.06] border border-violet-500/15 rounded-xl">
+                  <p className="text-violet-300/80 text-xs leading-relaxed flex items-start gap-1.5">
                     <Award size={12} className="flex-shrink-0 mt-0.5" />
                     {todaysTip.examHint}
                   </p>
@@ -129,7 +125,7 @@ export default function Dashboard({ stats, domains, onNavigate, weakestDomain })
         </div>
       </div>
 
-      {/* Domain progress */}
+      {/* Progreso por Dominio */}
       <section aria-labelledby="domains-title" className="mb-5 animate-fade-up" style={{ animationDelay: '300ms' }}>
         <div className="flex items-center justify-between mb-4">
           <h2 id="domains-title" className="section-title flex items-center gap-2">
@@ -162,7 +158,7 @@ export default function Dashboard({ stats, domains, onNavigate, weakestDomain })
                 <div className="h-1.5 bg-white/[0.04] rounded-full overflow-hidden mb-1.5">
                   <div
                     className={`h-full bg-gradient-to-r ${colors.solidGradient} rounded-full transition-all duration-700`}
-                    style={{ width: `${pct}%`, boxShadow: pct > 0 ? `0 0 8px ${colors.text.includes('blue') ? 'rgba(59,130,246,0.3)' : colors.text.includes('purple') ? 'rgba(168,85,247,0.3)' : colors.text.includes('emerald') ? 'rgba(16,185,129,0.3)' : colors.text.includes('rose') ? 'rgba(244,63,94,0.3)' : 'rgba(245,158,11,0.3)'}` : 'none' }}
+                    style={{ width: `${pct}%` }}
                     role="progressbar"
                     aria-valuenow={pct}
                     aria-valuemin={0}
@@ -193,7 +189,6 @@ export default function Dashboard({ stats, domains, onNavigate, weakestDomain })
         </div>
       </section>
 
-      {/* Recent quiz history */}
       {stats.quizHistory.length > 0 && (
         <section aria-labelledby="history-title" className="animate-fade-up" style={{ animationDelay: '400ms' }}>
           <h2 id="history-title" className="section-title mb-4">Historial de Quizzes</h2>
@@ -218,7 +213,7 @@ export default function Dashboard({ stats, domains, onNavigate, weakestDomain })
                         <td className="px-4 py-3 text-slate-300 text-xs">{d ? d.shortName : 'Simulación completa'}</td>
                         <td className="px-4 py-3 text-slate-400 text-xs">{entry.score}/{entry.total}</td>
                         <td className="px-4 py-3 text-right">
-                          <span className={`badge ${pct >= 75 ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' : pct >= 50 ? 'bg-amber-500/20 text-amber-400 border-amber-500/30' : 'bg-rose-500/20 text-rose-400 border-rose-500/30'} border`}>
+                          <span className={`badge ${pct >= 75 ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' : pct >= 50 ? 'bg-violet-500/20 text-violet-400 border-violet-500/30' : 'bg-rose-500/20 text-rose-400 border-rose-500/30'} border`}>
                             {pct}%
                           </span>
                         </td>

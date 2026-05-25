@@ -14,11 +14,11 @@
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-amber-500/80 ring-offset-2 ring-offset-slate-950;
+    @apply outline-none ring-2 ring-violet-500/80 ring-offset-2 ring-offset-slate-950;
   }
 
   ::selection {
-    @apply bg-amber-500/30 text-amber-200;
+    @apply bg-violet-500/30 text-violet-200;
   }
 }
 
@@ -39,7 +39,7 @@
   .card-glow::before {
     content: '';
     @apply absolute -inset-px rounded-2xl;
-    background: linear-gradient(135deg, rgba(245,158,11,0.1), transparent 40%, transparent 60%, rgba(99,102,241,0.08));
+    background: linear-gradient(135deg, rgba(139,92,246,0.1), transparent 40%, transparent 60%, rgba(59,130,246,0.08));
     z-index: -1;
   }
 
@@ -50,12 +50,12 @@
   /* ── Buttons ───────────────────────────────────────────────────── */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-5 py-2.5
-           bg-gradient-to-r from-amber-500 to-orange-500
-           hover:from-amber-400 hover:to-orange-400
-           text-slate-950 font-bold rounded-xl
+           bg-gradient-to-r from-violet-600 to-blue-600
+           hover:from-violet-500 hover:to-blue-500
+           text-white font-bold rounded-xl
            transition-all duration-200 active:scale-[0.97]
-           shadow-[0_0_20px_rgba(245,158,11,0.25)]
-           hover:shadow-[0_0_30px_rgba(245,158,11,0.4)];
+           shadow-[0_0_20px_rgba(139,92,246,0.25)]
+           hover:shadow-[0_0_30px_rgba(139,92,246,0.4)];
   }
   .btn-secondary {
     @apply inline-flex items-center gap-2 px-4 py-2
@@ -82,10 +82,10 @@
     @apply text-2xl lg:text-3xl font-black text-white tracking-tight;
   }
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-blue-400 to-cyan-400;
   }
-  .gradient-text-cool {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-violet-400 to-purple-400;
+  .gradient-text-warm {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-rose-400 via-pink-400 to-violet-400;
   }
 }
 
@@ -107,14 +107,14 @@
 .ambient-bg::before {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%);
   top: -200px;
   right: -100px;
 }
 .ambient-bg::after {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(99,102,241,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 70%);
   bottom: -150px;
   left: -100px;
   animation-delay: -10s;
@@ -176,19 +176,14 @@
   inset: 0;
   padding: 1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(245,158,11,0.3), rgba(99,102,241,0.15), rgba(245,158,11,0.1));
+  background: linear-gradient(135deg, rgba(139,92,246,0.3), rgba(59,130,246,0.15), rgba(139,92,246,0.1));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
 }
 
-/* ── Glow Ring (for progress ring SVG) ─────────────────────────── */
-.glow-ring {
-  filter: drop-shadow(0 0 8px currentColor);
-}
-
-/* ── Stagger animation children (up to 12) ─────────────────────── */
+/* ── Stagger animation children (up to 13+) ────────────────────── */
 .stagger-children > * {
   opacity: 0;
   animation: stagger-in 0.45s cubic-bezier(0.16,1,0.3,1) forwards;
