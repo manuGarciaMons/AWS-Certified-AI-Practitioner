@@ -179,7 +179,7 @@ export default function Glossary() {
           </button>
         </div>
       ) : (
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3 stagger-children">
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3 items-start stagger-children">
           {filtered.map(item => (
             <ServiceCard key={item.id} item={item} query={search} />
           ))}
