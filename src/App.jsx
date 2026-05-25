@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard'
 import Flashcards from './components/Flashcards'
 import Quiz from './components/Quiz'
 import DomainSummary from './components/DomainSummary'
+import Glossary from './components/Glossary'
 import { useProgress } from './hooks/useProgress'
 import { FLASHCARDS } from './data/flashcards'
 import { QUESTIONS } from './data/questions'
@@ -53,6 +54,9 @@ export default function App() {
           onSaveResult={progressHook.saveQuizResult}
           onNavigate={navigateTo}
         />
+      )}
+      {currentPage === 'glossary' && (
+        <Glossary />
       )}
       {currentPage === 'domains' && (
         <DomainSummary

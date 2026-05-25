@@ -1,15 +1,15 @@
 export const DOMAINS = [
   {
     id: 1,
-    name: 'Fundamentals of AI and ML',
-    shortName: 'AI & ML Basics',
+    name: 'Fundamentos de IA y ML',
+    shortName: 'IA y ML',
     weight: 20,
     color: 'blue',
     icon: '🧠',
-    description: 'Core machine learning concepts, algorithms, and AWS AI services',
+    description: 'Conceptos centrales de machine learning, algoritmos y servicios AWS de IA',
     keyConcepts: [
       {
-        title: 'Machine Learning Paradigms',
+        title: 'Paradigmas de Machine Learning',
         points: [
           'Supervised Learning: Model trained on labeled input-output pairs (e.g., classification, regression)',
           'Unsupervised Learning: Model finds patterns in unlabeled data (e.g., clustering, dimensionality reduction)',
@@ -19,7 +19,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Core ML Concepts',
+        title: 'Conceptos Clave de ML',
         points: [
           'Training: Process of adjusting model weights using a dataset to minimize loss',
           'Inference: Using a trained model to make predictions on new data',
@@ -31,7 +31,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Neural Networks & Deep Learning',
+        title: 'Redes Neuronales y Deep Learning',
         points: [
           'Artificial Neural Networks (ANNs): Layers of interconnected nodes inspired by the brain',
           'Deep Learning: Neural networks with many layers (deep architectures)',
@@ -43,7 +43,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Evaluation Metrics',
+        title: 'Métricas de Evaluación',
         points: [
           'Confusion Matrix: TP, TN, FP, FN — foundation for all classification metrics',
           'Accuracy: (TP+TN)/(Total) — misleading on imbalanced datasets',
@@ -55,7 +55,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'NLP & Computer Vision',
+        title: 'NLP y Visión por Computadora',
         points: [
           'Natural Language Processing (NLP): Tasks include classification, NER, translation, summarization',
           'Tokenization: Splitting text into tokens (words, subwords, characters)',
@@ -80,15 +80,15 @@ export const DOMAINS = [
   },
   {
     id: 2,
-    name: 'Fundamentals of Generative AI',
-    shortName: 'Generative AI',
+    name: 'Fundamentos de IA Generativa',
+    shortName: 'IA Generativa',
     weight: 24,
     color: 'purple',
     icon: '✨',
-    description: 'Foundation models, LLMs, prompt engineering, and core GenAI concepts',
+    description: 'Foundation Models, LLMs, prompt engineering y conceptos clave de GenAI',
     keyConcepts: [
       {
-        title: 'Foundation Models & LLMs',
+        title: 'Foundation Models y LLMs',
         points: [
           'Foundation Model (FM): Large model pretrained on broad data, adaptable to many tasks',
           'Large Language Model (LLM): FM specifically trained on text; generates human-like language',
@@ -100,7 +100,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Inference Parameters',
+        title: 'Parámetros de Inferencia',
         points: [
           'Temperature: Controls randomness — low (0–0.3) = deterministic, high (0.7–1) = creative',
           'Top-P (Nucleus Sampling): Considers tokens covering top-P% probability mass',
@@ -111,7 +111,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Prompt Engineering',
+        title: 'Prompt Engineering e Ingeniería de Prompts',
         points: [
           'Zero-shot Prompting: Ask the model to perform a task with no examples',
           'Few-shot Prompting: Provide 2–5 input/output examples to guide the model',
@@ -122,7 +122,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'RAG & Hallucinations',
+        title: 'RAG y Alucinaciones',
         points: [
           'Hallucination: Model generates plausible-sounding but factually incorrect information',
           'RAG (Retrieval-Augmented Generation): Augment prompts with retrieved relevant documents',
@@ -133,7 +133,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'GenAI Use Cases',
+        title: 'Casos de Uso de GenAI',
         points: [
           'Text generation: Content creation, summarization, translation, Q&A',
           'Code generation: Autocomplete, debugging, test generation, code explanation',
@@ -155,15 +155,15 @@ export const DOMAINS = [
   },
   {
     id: 3,
-    name: 'Applications of Foundation Models',
-    shortName: 'FM Applications',
+    name: 'Aplicaciones de Modelos Fundacionales',
+    shortName: 'Apps de FMs',
     weight: 28,
     color: 'green',
     icon: '🚀',
-    description: 'RAG architectures, agents, evaluation, and production deployment patterns',
+    description: 'Arquitecturas RAG, agentes IA, evaluación y patrones de despliegue en producción',
     keyConcepts: [
       {
-        title: 'RAG Architecture Deep Dive',
+        title: 'Arquitectura RAG en Detalle',
         points: [
           'Ingestion Pipeline: Chunk documents → generate embeddings → store in vector DB',
           'Retrieval: User query → embed query → similarity search → retrieve top-K chunks',
@@ -175,7 +175,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Vector Databases & Embeddings',
+        title: 'Bases de Datos Vectoriales y Embeddings',
         points: [
           'Vector Database: Optimized for storing and querying high-dimensional embedding vectors',
           'Cosine Similarity: Measures angle between vectors — used for semantic similarity',
@@ -185,7 +185,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Agents & Tool Use',
+        title: 'Agentes y Uso de Herramientas',
         points: [
           'AI Agents: LLMs that autonomously plan and execute multi-step tasks',
           'Tool Use / Function Calling: Model can invoke external functions, APIs, or services',
@@ -196,7 +196,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Model Evaluation Metrics',
+        title: 'Métricas de Evaluación de Modelos',
         points: [
           'ROUGE: Recall-based metric comparing n-gram overlap (used for summarization)',
           'BLEU: Precision-based metric for translation quality',
@@ -208,7 +208,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Cost & Performance Optimization',
+        title: 'Optimización de Costos y Rendimiento',
         points: [
           'Prompt Caching: Cache common prefix prompts to reduce tokens processed',
           'Model Distillation: Train smaller models to mimic larger ones (faster + cheaper)',
@@ -231,15 +231,15 @@ export const DOMAINS = [
   },
   {
     id: 4,
-    name: 'Guidelines for Responsible AI',
-    shortName: 'Responsible AI',
+    name: 'Directrices para IA Responsable',
+    shortName: 'IA Responsable',
     weight: 14,
     color: 'orange',
     icon: '⚖️',
-    description: 'Bias, fairness, transparency, explainability, and AI ethics',
+    description: 'Sesgo, equidad, transparencia, explicabilidad y ética de la IA',
     keyConcepts: [
       {
-        title: 'Bias & Fairness',
+        title: 'Sesgo y Equidad',
         points: [
           'Training Data Bias: Historical patterns and prejudices encoded in the dataset',
           'Sampling Bias: Training data not representative of the real-world population',
@@ -251,7 +251,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Transparency & Explainability',
+        title: 'Transparencia y Explicabilidad',
         points: [
           'Explainable AI (XAI): Techniques to make model decisions understandable',
           'SHAP (SHapley Additive exPlanations): Feature importance values per prediction',
@@ -263,7 +263,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Privacy & Data Governance',
+        title: 'Privacidad y Gobernanza de Datos',
         points: [
           'Data Minimization: Collect only what is necessary for the stated purpose',
           'PII (Personally Identifiable Information): Must be protected; detect with Amazon Comprehend',
@@ -275,7 +275,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Human-in-the-Loop & Oversight',
+        title: 'Human-in-the-Loop y Supervisión',
         points: [
           'Human-in-the-Loop (HITL): Humans review and approve model decisions before action',
           'Human-on-the-Loop: Humans can intervene; system acts autonomously by default',
@@ -285,7 +285,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Content Moderation & Safety',
+        title: 'Moderación de Contenido y Seguridad',
         points: [
           'Toxicity Detection: Identify hate speech, harassment, and harmful content',
           'Content Filters: Pre/post-processing to block unsafe inputs and outputs',
@@ -306,15 +306,15 @@ export const DOMAINS = [
   },
   {
     id: 5,
-    name: 'Security, Compliance & Governance for AI',
-    shortName: 'Security & Governance',
+    name: 'Seguridad, Cumplimiento y Gobernanza',
+    shortName: 'Seguridad y Gov.',
     weight: 14,
     color: 'red',
     icon: '🔒',
-    description: 'AI security threats, compliance frameworks, and governance controls',
+    description: 'Amenazas de seguridad en IA, marcos de cumplimiento y controles de gobernanza',
     keyConcepts: [
       {
-        title: 'AI-Specific Security Threats',
+        title: 'Amenazas de Seguridad Específicas de IA',
         points: [
           'Prompt Injection: Attacker embeds instructions in user input to hijack model behavior',
           'Indirect Prompt Injection: Malicious instructions hidden in external documents retrieved by RAG',
@@ -326,7 +326,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Data Security',
+        title: 'Seguridad de Datos',
         points: [
           'Encryption at Rest: KMS-managed keys encrypt stored training data and model artifacts',
           'Encryption in Transit: TLS/HTTPS for all data moving between services',
@@ -338,7 +338,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Identity & Access Management',
+        title: 'Gestión de Identidad y Acceso (IAM)',
         points: [
           'Least Privilege: Grant only the permissions required for a specific task',
           'IAM Roles for SageMaker: Training jobs assume roles with only necessary S3/KMS permissions',
@@ -349,7 +349,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Compliance Frameworks',
+        title: 'Marcos de Cumplimiento',
         points: [
           'SOC 2: Service Organization Control — security, availability, confidentiality',
           'ISO 27001: International standard for information security management systems',
@@ -361,7 +361,7 @@ export const DOMAINS = [
         ],
       },
       {
-        title: 'Governance & Auditability',
+        title: 'Gobernanza y Auditabilidad',
         points: [
           'AWS CloudTrail: Immutable audit log of all API calls — who did what, when',
           'AWS Config: Continuous compliance monitoring and configuration change tracking',
@@ -386,9 +386,34 @@ export const DOMAINS = [
 ]
 
 export const DOMAIN_COLORS = {
-  blue: { bg: 'bg-blue-500', light: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-800' },
-  purple: { bg: 'bg-purple-500', light: 'bg-purple-50', text: 'text-purple-700', border: 'border-purple-200', badge: 'bg-purple-100 text-purple-800' },
-  green: { bg: 'bg-green-500', light: 'bg-green-50', text: 'text-green-700', border: 'border-green-200', badge: 'bg-green-100 text-green-800' },
-  orange: { bg: 'bg-orange-500', light: 'bg-orange-50', text: 'text-orange-700', border: 'border-orange-200', badge: 'bg-orange-100 text-orange-800' },
-  red: { bg: 'bg-red-500', light: 'bg-red-50', text: 'text-red-700', border: 'border-red-200', badge: 'bg-red-100 text-red-800' },
+  blue: {
+    bg: 'bg-blue-500', light: 'bg-blue-500/10', text: 'text-blue-400',
+    border: 'border-blue-500/30', badge: 'bg-blue-500/20 text-blue-400 border border-blue-500/30',
+    solidGradient: 'from-blue-600 to-cyan-600', glow: 'shadow-blue-500/20',
+    ring: 'ring-blue-500/40',
+  },
+  purple: {
+    bg: 'bg-purple-500', light: 'bg-purple-500/10', text: 'text-purple-400',
+    border: 'border-purple-500/30', badge: 'bg-purple-500/20 text-purple-400 border border-purple-500/30',
+    solidGradient: 'from-purple-600 to-indigo-600', glow: 'shadow-purple-500/20',
+    ring: 'ring-purple-500/40',
+  },
+  green: {
+    bg: 'bg-emerald-500', light: 'bg-emerald-500/10', text: 'text-emerald-400',
+    border: 'border-emerald-500/30', badge: 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30',
+    solidGradient: 'from-emerald-600 to-teal-600', glow: 'shadow-emerald-500/20',
+    ring: 'ring-emerald-500/40',
+  },
+  orange: {
+    bg: 'bg-amber-500', light: 'bg-amber-500/10', text: 'text-amber-400',
+    border: 'border-amber-500/30', badge: 'bg-amber-500/20 text-amber-400 border border-amber-500/30',
+    solidGradient: 'from-amber-500 to-orange-500', glow: 'shadow-amber-500/20',
+    ring: 'ring-amber-500/40',
+  },
+  red: {
+    bg: 'bg-rose-500', light: 'bg-rose-500/10', text: 'text-rose-400',
+    border: 'border-rose-500/30', badge: 'bg-rose-500/20 text-rose-400 border border-rose-500/30',
+    solidGradient: 'from-rose-600 to-red-600', glow: 'shadow-rose-500/20',
+    ring: 'ring-rose-500/40',
+  },
 }
